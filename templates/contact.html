@@ -1,0 +1,66 @@
+{% extends "base.html" %} {% block title %}Contact Us{% endblock title %}
+{%block body %}
+<div class="container-fluid px-0 mb-3">
+  <img
+    src="https://source.unsplash.com/1400x400/?phone,message"
+    class="d-block w-100"
+    alt="..."
+  />
+</div>
+<h1 class="text-center">Contact Us</h1>
+<form method="post" action="/contact">
+    {% csrf_token %}
+  <div class="container">
+    <div class="form-group mb-3">
+      <span class="form-group-text" id="basic-addon1">Enter your Name</span>
+      <input
+        type="name"
+        class="form-control"
+        name="name"
+        placeholder="Enter your name"
+        aria-label="name"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <span class="form-group-text" id="basic-addon1">Enter your E-Mail</span>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        placeholder="Example-123@gmail.com"
+        aria-label="E-Mail"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <span class="form-group-text" id="basic-addon1"
+        >Enter your Phone Number</span
+      >
+      <input
+        type="phone"
+        class="form-control"
+        name="phone"
+        placeholder="xxxxxxxxxx"
+        aria-label="Phone"
+        aria-describedby="basic-addon1"
+      />
+    </div>
+    <div class="form-group mb-3">
+      <label class="form-group" id="desc" rows="3"
+        >What you want to contact for.</label
+      >
+      <textarea
+        type="desc"
+        class="form-control"
+        name="desc"
+        placeholder="Enter your reason to contact"
+        aria-label="Query"
+        aria-describedby="basic-addon1"
+      ></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+</form>
+{% endblock body %}
+
